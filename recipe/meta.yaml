@@ -7,7 +7,6 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: maxstat_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/maxstat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/maxstat/maxstat_{{ version }}.tar.gz
@@ -16,20 +15,20 @@ source:
 build:
   merge_build_host: True  # [win]
   number: 1006
-  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-exactranktests >=0.8_23
@@ -47,10 +46,11 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=maxstat
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Maximally selected rank statistics with several p-value approximations.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
