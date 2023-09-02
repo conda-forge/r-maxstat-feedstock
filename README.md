@@ -9,7 +9,7 @@ About r-maxstat
 
 Home: https://CRAN.R-project.org/package=maxstat
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Summary: Maximally selected rank statistics with several p-value approximations.
 
@@ -18,7 +18,7 @@ About r-maxstat
 
 Home: https://CRAN.R-project.org/package=maxstat
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Summary: Maximally selected rank statistics with several p-value approximations.
 
