@@ -1,4 +1,4 @@
-{% set version = '0.7-25' %}
+{% set version = "0.7-26" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/maxstat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/maxstat/maxstat_{{ version }}.tar.gz
-  sha256: 6fc13b8d83797e10fc148183eb440a30584442fdf73628652c606ede790e9f84
+  sha256: e458c2bb03e3eca09b3b957920e0faba1a50a0d43f6d835a5912f0381fc28b0b
 
 build:
-  number: 1008
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
